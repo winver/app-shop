@@ -1,16 +1,16 @@
 @extends('layouts.app')
 
-@section('body-class','landing-page')
+@section('body-class', 'landing-page')
 
 @section('content')
-    <div class="header header-filter" style="background-image: url('https://images.unsplash.com/photo-1423655156442-ccc11daa4e99?crop=entropy&dpr=2&fit=crop&fm=jpg&h=750&ixjsv=2.1.0&ixlib=rb-0.3.5&q=50&w=1450');">
+<div class="header header-filter" style="background-image: url('https://images.unsplash.com/photo-1423655156442-ccc11daa4e99?crop=entropy&dpr=2&fit=crop&fm=jpg&h=750&ixjsv=2.1.0&ixlib=rb-0.3.5&q=50&w=1450');">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
-                        <h1 class="title">Write the best title for your page.</h1>
-                        <h4>Every landing page needs a small description after the big bold title, that's why we added this text here. Add here all the information that can make you or your product create the first impression.</h4>
+                        <h1 class="title">Bienvenido a APP SHOP.</h1>
+                        <h4>Realiza pedidos en linea con productos de la mas alta calidad.</h4>
                         <br />
-                        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="btn btn-danger btn-raised btn-lg">
+                        <a href="https://youtu.be/9jI-z9QN6g8" class="btn btn-danger btn-raised btn-lg">
                             <i class="fa fa-play"></i> Watch video
                         </a>
                     </div>
@@ -23,8 +23,8 @@
                 <div class="section text-center section-landing">
                     <div class="row">
                         <div class="col-md-8 col-md-offset-2">
-                            <h2 class="title">Let's talk product</h2>
-                            <h5 class="description">This is the paragraph where you can write more details about your product. Keep you user engaged by providing meaningful information. Remember that by this time, the user is curious, otherwise he wouldn't scroll to get here. Add a button if you want the user to see more.</h5>
+                            <h2 class="title">¿Por que App Shop?</h2>
+                            <h5 class="description">Puedes revisar nuestra relacion completa de productos, comparar precios y realizar tus pedidos cuando estes seguro.</h5>
                         </div>
                     </div>
 
@@ -35,8 +35,8 @@
                                     <div class="icon icon-primary">
                                         <i class="material-icons">chat</i>
                                     </div>
-                                    <h4 class="info-title">First Feature</h4>
-                                    <p>Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough.</p>
+                                    <h4 class="info-title">Atendemos sus dudas</h4>
+                                    <p>atendemos rapidamente cualquier consulta que tengas via chat. No estas solo, sino que siempre estamos atentos a tus inquietudes.</p>
                                 </div>
                             </div>
                             <div class="col-md-4">
@@ -44,8 +44,8 @@
                                     <div class="icon icon-success">
                                         <i class="material-icons">verified_user</i>
                                     </div>
-                                    <h4 class="info-title">Second Feature</h4>
-                                    <p>Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough.</p>
+                                    <h4 class="info-title">Pago Seguro</h4>
+                                    <p>Todo pedido que realices sera confirmado a traves de una llamada si no confias en los pagos en linea puedes pagar contra entrega el valor acordado.</p>
                                 </div>
                             </div>
                             <div class="col-md-4">
@@ -53,8 +53,8 @@
                                     <div class="icon icon-danger">
                                         <i class="material-icons">fingerprint</i>
                                     </div>
-                                    <h4 class="info-title">Third Feature</h4>
-                                    <p>Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough.</p>
+                                    <h4 class="info-title">Informacion Privada</h4>
+                                    <p>Los pedidos que realices solo los conoceras tu a traves de tu panel de usuari. Nadie mas tiene acceso a esta informacion.</p>
                                 </div>
                             </div>
                         </div>
@@ -62,45 +62,24 @@
                 </div>
 
                 <div class="section text-center">
-                    <h2 class="title">Here is our team</h2>
+                    <h2 class="title">PRODUCTOS DISPONIBLES</h2>
 
                     <div class="team">
                         <div class="row">
+                           @foreach ($products as $product)
                             <div class="col-md-4">
                                 <div class="team-player">
-                                    <img src="../assets/img/avatar.jpg" alt="Thumbnail Image" class="img-raised img-circle">
-                                    <h4 class="title">Gigi Hadid <br />
-                                        <small class="text-muted">Model</small>
+                                    <img src="{{ $product->images()->first()->image }}" alt=" Thumbnail Image" class="img-raised img-circle">
+                                    <h4 class="title">{{ $product->name }}<br />
+                                        <small class="text-muted">{{ $product->category->name }}</small>
                                     </h4>
-                                    <p class="description">You can write here details about one of your team members. You can give more details about what they do. Feel free to add some <a href="#">links</a> for people to be able to follow them outside the site.</p>
-                                    <a href="#pablo" class="btn btn-simple btn-just-icon"><i class="fa fa-twitter"></i></a>
-                                    <a href="#pablo" class="btn btn-simple btn-just-icon"><i class="fa fa-instagram"></i></a>
-                                    <a href="#pablo" class="btn btn-simple btn-just-icon btn-default"><i class="fa fa-facebook-square"></i></a>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="team-player">
-                                    <img src="../assets/img/christian.jpg" alt="Thumbnail Image" class="img-raised img-circle">
-                                    <h4 class="title">Christian Louboutin<br />
-                                        <small class="text-muted">Designer</small>
-                                    </h4>
-                                    <p class="description">You can write here details about one of your team members. You can give more details about what they do. Feel free to add some <a href="#">links</a> for people to be able to follow them outside the site.</p>
-                                    <a href="#pablo" class="btn btn-simple btn-just-icon"><i class="fa fa-twitter"></i></a>
-                                    <a href="#pablo" class="btn btn-simple btn-just-icon"><i class="fa fa-linkedin"></i></a>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="team-player">
-                                    <img src="../assets/img/kendall.jpg" alt="Thumbnail Image" class="img-raised img-circle">
-                                    <h4 class="title">Kendall Jenner<br />
-                                        <small class="text-muted">Model</small>
-                                    </h4>
-                                    <p>You can write here details about one of your team members. You can give more details about what they do. Feel free to add some <a href="#">links</a> for people to be able to follow them outside the site.</p>
+                                    <p class="description">{{ $product->description }}</p>
                                     <a href="#pablo" class="btn btn-simple btn-just-icon"><i class="fa fa-google-plus"></i></a>
                                     <a href="#pablo" class="btn btn-simple btn-just-icon"><i class="fa fa-youtube-play"></i></a>
                                     <a href="#pablo" class="btn btn-simple btn-just-icon btn-default"><i class="fa fa-twitter"></i></a>
                                 </div>
                             </div>
+                            @endforeach
                         </div>
                     </div>
 
@@ -179,5 +158,5 @@
                     &copy; 2016, made with <i class="fa fa-heart heart"></i> by Creative Tim
                 </div>
             </div>
-        </footer>
+        </footer>                          
 @endsection
